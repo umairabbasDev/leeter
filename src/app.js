@@ -1,29 +1,29 @@
-const express = require('express');
-const morgan = require('morgan');
-const helmet = require('helmet');
-const cors = require('cors');
+import express, { json } from "express";
+import morgan from "morgan";
+import helmet from "helmet";
+import cors from "cors";
 
-require('dotenv').config();
+require("dotenv").config();
 
-const middlewares = require('./middlewares');
-const api = require('./api');
+import { notFound, errorHandler } from "./middlewares";
+import api from "./api";
 
 const app = express();
 
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 app.use(helmet());
 app.use(cors());
-app.use(express.json());
+app.use(json());
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.json({
-    message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
+    message: "🦄🌈✨👋🌎🌍🌏✨🌈🦄",
   });
 });
 
-app.use('/api/v1', api);
+app.use("/api/v1", api);
 
-app.use(middlewares.notFound);
-app.use(middlewares.errorHandler);
+app.use(notFound);
+app.use(errorHandler);
 
-module.exports = app;
+export default app;

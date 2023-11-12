@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "a video downloader",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo text",
     "start": "node index.js",
@@ -10,5 +11,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-html-parser": "^6.1.11",
+    "puppeteer": "^21.5.1"
+  }
 }

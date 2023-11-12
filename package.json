@@ -1,0 +1,14 @@
+{
+  "name": "leeter",
+  "version": "1.0.0",
+  "description": "a video downloader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo text",
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
